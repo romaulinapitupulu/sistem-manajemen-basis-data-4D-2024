@@ -1,0 +1,5 @@
+-- coba coba aja cuy
+-- seru mending make git bash
+-- dikenalin aja cuy
+-- mangan tangi turu
+-- mawar ga buka buka
