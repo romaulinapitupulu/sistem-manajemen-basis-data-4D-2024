@@ -89,3 +89,4 @@ CREATE TABLE Pembayaran (
     jumlah DECIMAL(10, 2),
     FOREIGN KEY (siswa_id) REFERENCES Siswa(id)
 );
+--M syahrul abidin
