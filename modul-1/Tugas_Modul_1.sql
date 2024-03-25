@@ -52,3 +52,36 @@ CREATE TABLE Pendaftaran_Mata_Kuliah (
     FOREIGN KEY (Kode_Mata_Kuliah) REFERENCES Mata_Kuliah(Kode_Mata_Kuliah)
 );
 
+-- Tabel Pembayaran_UKT
+CREATE TABLE Pembayaran_UKT (
+    ID_Pembayaran_UKT INT AUTO_INCREMENT PRIMARY KEY,
+    NIM_Mahasiswa INT,
+    Tanggal DATE,
+    Jumlah DECIMAL(10, 2),
+    FOREIGN KEY (NIM_Mahasiswa) REFERENCES Mahasiswa(NIM)
+);
+
+-- Tabel Pembayaran_Gaji_Dosen
+CREATE TABLE Pembayaran_Gaji_Dosen (
+    ID_Pembayaran_Gaji INT AUTO_INCREMENT PRIMARY KEY,
+    NIDN_Dosen INT,
+    Tanggal DATE,
+    Jumlah DECIMAL(10, 2),
+    FOREIGN KEY (NIDN_Dosen) REFERENCES Dosen(NIDN)
+);
+
+-- Tabel Pembelian_Peralatan
+CREATE TABLE Pembelian_Peralatan (
+    ID_Pembelian_Peralatan INT AUTO_INCREMENT PRIMARY KEY,
+    Deskripsi VARCHAR(255),
+    Tanggal DATE,
+    Jumlah DECIMAL(10, 2)
+);
+
+-- Tabel Pembayaran_Tagihan
+CREATE TABLE Pembayaran_Tagihan (
+    ID_Pembayaran_Tagihan INT AUTO_INCREMENT PRIMARY KEY,
+    Deskripsi VARCHAR(255),
+    Tanggal DATE,
+    Jumlah DECIMAL(10, 2)
+);
