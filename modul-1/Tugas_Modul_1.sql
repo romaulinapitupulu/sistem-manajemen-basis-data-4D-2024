@@ -85,3 +85,22 @@ CREATE TABLE Pembayaran_Tagihan (
     Tanggal DATE,
     Jumlah DECIMAL(10, 2)
 );
+-- Tabel Laporan_Daftar_Mahasiswa
+CREATE TABLE Laporan_Daftar_Mahasiswa (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Tanggal_Laporan DATE,
+    Jumlah_Mahasiswa INT
+);
+-- Tabel Laporan_Daftar_Dosen
+CREATE TABLE Laporan_Daftar_Dosen (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Tanggal_Laporan DATE,
+    Jumlah_Dosen INT
+);
+-- Tabel Laporan_Daftar_Dosen
+CREATE TABLE Laporan_Keuangan (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Tanggal_Laporan DATE,
+    Kategori VARCHAR(100),
+    Total_Pengeluaran DECIMAL(10, 2)
+);
