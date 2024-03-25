@@ -1,11 +1,11 @@
 -- Membuat Database
-CREATE DATABASE universitas_trunojoyo;
+CREATE DATABASE IF NOT EXISTS universitas_trunojoyo;
 
 -- Menggunakan Database
 USE universitas_trunojoyo;
 
 -- Tabel Mahasiswa
-CREATE TABLE Mahasiswa (
+CREATE TABLE IF NOT EXISTS Mahasiswa (
     NIM INT PRIMARY KEY,
     Nama VARCHAR(100),
     Alamat VARCHAR(255),
@@ -15,7 +15,7 @@ CREATE TABLE Mahasiswa (
 );
 
 -- Tabel Dosen
-CREATE TABLE Dosen (
+CREATE TABLE IF NOT EXISTS Dosen (
     NIDN INT PRIMARY KEY,
     Nama VARCHAR(100),
     Alamat VARCHAR(255),
@@ -24,7 +24,7 @@ CREATE TABLE Dosen (
 );
 
 -- Tabel Status_Mahasiswa
-CREATE TABLE Status_Mahasiswa (
+CREATE TABLE IF NOT EXISTS Status_Mahasiswa (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NIM_Mahasiswa INT,
     Status ENUM('Berhenti Kuliah', 'Lulus'),
@@ -33,7 +33,7 @@ CREATE TABLE Status_Mahasiswa (
 );
 
 -- Tabel Mata_Kuliah
-CREATE TABLE Mata_Kuliah (
+CREATE TABLE IF NOT EXISTS Mata_Kuliah (
     Kode_Mata_Kuliah VARCHAR(20) PRIMARY KEY,
     Nama_Mata_Kuliah VARCHAR(100),
     SKS INT,
@@ -43,7 +43,7 @@ CREATE TABLE Mata_Kuliah (
 );
 
 -- Tabel Pendaftaran_Mata_Kuliah
-CREATE TABLE Pendaftaran_Mata_Kuliah (
+CREATE TABLE IF NOT EXISTS Pendaftaran_Mata_Kuliah (
     ID_Pendaftaran INT AUTO_INCREMENT PRIMARY KEY,
     NIM_Mahasiswa INT,
     Kode_Mata_Kuliah VARCHAR(20),
@@ -53,7 +53,7 @@ CREATE TABLE Pendaftaran_Mata_Kuliah (
 );
 
 -- Tabel Pembayaran_UKT
-CREATE TABLE Pembayaran_UKT (
+CREATE TABLE IF NOT EXISTS Pembayaran_UKT (
     ID_Pembayaran_UKT INT AUTO_INCREMENT PRIMARY KEY,
     NIM_Mahasiswa INT,
     Tanggal DATE,
@@ -62,7 +62,7 @@ CREATE TABLE Pembayaran_UKT (
 );
 
 -- Tabel Pembayaran_Gaji_Dosen
-CREATE TABLE Pembayaran_Gaji_Dosen (
+CREATE TABLE IF NOT EXISTS Pembayaran_Gaji_Dosen (
     ID_Pembayaran_Gaji INT AUTO_INCREMENT PRIMARY KEY,
     NIDN_Dosen INT,
     Tanggal DATE,
@@ -71,7 +71,7 @@ CREATE TABLE Pembayaran_Gaji_Dosen (
 );
 
 -- Tabel Pembelian_Peralatan
-CREATE TABLE Pembelian_Peralatan (
+CREATE TABLE IF NOT EXISTS Pembelian_Peralatan (
     ID_Pembelian_Peralatan INT AUTO_INCREMENT PRIMARY KEY,
     Deskripsi VARCHAR(255),
     Tanggal DATE,
@@ -79,26 +79,29 @@ CREATE TABLE Pembelian_Peralatan (
 );
 
 -- Tabel Pembayaran_Tagihan
-CREATE TABLE Pembayaran_Tagihan (
+CREATE TABLE IF NOT EXISTS Pembayaran_Tagihan (
     ID_Pembayaran_Tagihan INT AUTO_INCREMENT PRIMARY KEY,
     Deskripsi VARCHAR(255),
     Tanggal DATE,
     Jumlah DECIMAL(10, 2)
 );
+
 -- Tabel Laporan_Daftar_Mahasiswa
-CREATE TABLE Laporan_Daftar_Mahasiswa (
+CREATE TABLE IF NOT EXISTS Laporan_Daftar_Mahasiswa (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Tanggal_Laporan DATE,
     Jumlah_Mahasiswa INT
 );
+
 -- Tabel Laporan_Daftar_Dosen
-CREATE TABLE Laporan_Daftar_Dosen (
+CREATE TABLE IF NOT EXISTS Laporan_Daftar_Dosen (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Tanggal_Laporan DATE,
     Jumlah_Dosen INT
 );
--- Tabel Laporan_Daftar_Dosen
-CREATE TABLE Laporan_Keuangan (
+
+-- Tabel Laporan_Keuangan
+CREATE TABLE IF NOT EXISTS Laporan_Keuangan (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     Tanggal_Laporan DATE,
     Kategori VARCHAR(100),
